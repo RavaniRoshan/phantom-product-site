@@ -52,7 +52,7 @@ export function Footer() {
       {/* Footer */}
       <footer className="bg-phantom-bg dark:bg-[#050505] border-t border-border-subtle pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col items-center md:items-start gap-2">
+          <div className="flex flex-col items-center md:items-start gap-3">
             <div className="flex items-center gap-2 text-phantom-text">
               <Ghost className="w-5 h-5" />
               <span className="font-bold text-lg tracking-tight">phantom</span>
@@ -60,11 +60,19 @@ export function Footer() {
             <p className="text-sm text-phantom-faint">
               The agent that works while you don't watch.
             </p>
+            <div className="flex flex-wrap items-center gap-2">
+              {['Apache-2.0', 'Rust + Python', 'runs fully offline'].map((b) => (
+                <span key={b} className="text-[10px] font-mono text-phantom-muted border border-border-subtle bg-phantom-card px-2 py-1 rounded-full">
+                  {b}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="flex items-center gap-8 text-sm font-mono text-phantom-text dark:text-phantom-muted">
             <a href="https://github.com/RavaniRoshan/phantom" className="hover:text-phantom-red transition-colors">GitHub</a>
-            <a href="https://github.com/RavaniRoshan/phantom#readme" className="hover:text-phantom-red transition-colors">README</a>
+            <a href="https://github.com/RavaniRoshan/phantom#readme" className="hover:text-phantom-red transition-colors">Docs</a>
+            <a href="#waitlist" className="hover:text-phantom-red transition-colors">Privacy</a>
             <a href="https://github.com/RavaniRoshan/phantom/blob/main/LICENSE" className="hover:text-phantom-red transition-colors">License</a>
           </div>
         </div>

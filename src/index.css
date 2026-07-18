@@ -75,3 +75,54 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ---- World-class polish utilities ---- */
+
+/* Subtle film-grain for depth across the whole page */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Gradient text accent */
+.text-gradient {
+  background: linear-gradient(100deg, var(--phantom-text) 0%, var(--phantom-accent) 55%, var(--phantom-red) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dark .text-gradient {
+  background: linear-gradient(100deg, #F4F1EB 0%, #FF6B59 50%, var(--phantom-red) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Aurora blobs (hero background) */
+@keyframes aurora-float {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  33%  { transform: translate3d(6%, -4%, 0) scale(1.12); }
+  66%  { transform: translate3d(-5%, 5%, 0) scale(0.94); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  will-change: transform;
+  animation: aurora-float 18s ease-in-out infinite;
+}
+
+/* Cursor-following spotlight (set --x/--y on the element) */
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(420px circle at var(--x, 50%) var(--y, 50%), var(--border-red), transparent 42%);
+  pointer-events: none;
+}
+.spotlight:hover::after {
+  opacity: 1;
+}

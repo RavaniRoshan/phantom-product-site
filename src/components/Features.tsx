@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { EyeOff, Layers, ShieldAlert, WifiOff, Monitor, Lock, Chrome, TerminalSquare } from 'lucide-react';
+import { SpotlightCard } from './ui/SpotlightCard';
 
 const problems = [
   {
@@ -51,24 +52,25 @@ export function Features() {
           <div className="absolute -left-3 top-1/2 w-1.5 h-1.5 rounded-full bg-phantom-red animate-pulse hidden md:block" />
 
           {problems.map((item, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group bg-phantom-card border border-border-subtle p-8 hover:border-border-red transition-colors relative overflow-hidden rounded-xl"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-phantom-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="flex items-center justify-between mb-8">
-                {item.icon}
-                <div className="text-[10px] font-mono text-phantom-red border border-phantom-red/30 px-2 py-1 rounded bg-phantom-red/10">
-                  {item.meta}
+            <SpotlightCard key={i}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group bg-phantom-card border border-border-subtle p-8 hover:border-border-red transition-colors relative overflow-hidden rounded-xl h-full"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-phantom-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="flex items-center justify-between mb-8">
+                  {item.icon}
+                  <div className="text-[10px] font-mono text-phantom-red border border-phantom-red/30 px-2 py-1 rounded bg-phantom-red/10">
+                    {item.meta}
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-phantom-muted leading-relaxed">{item.body}</p>
-            </motion.div>
+                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                <p className="text-phantom-muted leading-relaxed">{item.body}</p>
+              </motion.div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

@@ -13,7 +13,14 @@ export function Hero() {
     <div className="relative pt-32 overflow-hidden bg-phantom-red">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-phantom-bg mix-blend-multiply z-10" />
       <div className="absolute inset-0 bg-grid-red opacity-50 z-10 pointer-events-none" />
-      
+
+      {/* Aurora depth layer */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="aurora-blob w-[600px] h-[600px] -top-32 -left-24 bg-[rgba(122,29,22,0.55)]" style={{ animationDelay: '0s' }} />
+        <div className="aurora-blob w-[520px] h-[520px] top-32 -right-16 bg-[rgba(0,0,0,0.4)]" style={{ animationDelay: '-6s' }} />
+        <div className="aurora-blob w-[420px] h-[420px] bottom-8 left-1/3 bg-[rgba(255,107,89,0.35)]" style={{ animationDelay: '-12s' }} />
+      </div>
+
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-100">
         <BackgroundShapes 
           width={2000} 
@@ -38,27 +45,35 @@ export function Hero() {
           </div>
           
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-[1.05] mb-8">
-            No focus theft.<br />No waiting.
+            No focus theft.<br /><span className="text-gradient">No waiting.</span>
           </h1>
           
           <p className="text-xl text-white/80 mb-10 max-w-xl leading-relaxed">
             Phantom plans, routes, and executes tasks through a headless browser, local files, PowerShell, and an invisible Windows desktop — while you keep using your machine.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <a 
-              href="https://github.com/RavaniRoshan/phantom" 
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <a
+              href="https://github.com/RavaniRoshan/phantom"
               className="inline-flex items-center justify-center gap-2 bg-black text-white  px-8 py-4 rounded-full font-medium hover:opacity-90  transition-colors border border-transparent  shadow-lg "
             >
               View GitHub
             </a>
-            <a 
-              href="https://github.com/RavaniRoshan/phantom#run" 
+            <a
+              href="https://github.com/RavaniRoshan/phantom#run"
               className="inline-flex items-center justify-center gap-2 bg-phantom-text/10 text-white backdrop-blur px-8 py-4 rounded-full font-medium hover:bg-phantom-text/20 transition-colors border border-phantom-text/10"
             >
               Run locally
             </a>
           </div>
+
+          <a
+            href="#waitlist"
+            className="inline-flex items-center gap-1 text-sm font-mono text-white/60 hover:text-white transition-colors mb-12 group"
+          >
+            or join early access
+            <span className="transition-transform group-hover:translate-x-0.5">→</span>
+          </a>
 
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-white/60">
             <span>Windows-first</span>
