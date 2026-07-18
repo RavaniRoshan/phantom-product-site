@@ -1,6 +1,5 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { StackMarquee } from './components/StackMarquee';
 import { Features } from './components/Features';
 import { Benefits } from './components/Benefits';
 import { Architecture } from './components/Architecture';
@@ -15,7 +14,6 @@ export default function App() {
     <div className="min-h-screen bg-phantom-bg font-sans text-phantom-text overflow-x-hidden">
       <Header />
       <Hero />
-      <StackMarquee />
       <Features />
       <Benefits />
       <Architecture />
