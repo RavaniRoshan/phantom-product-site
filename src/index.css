@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --phantom-red: #F04A35;
+  --phantom-bg: #FAFAFA;
+  --phantom-section: #F3F3F3;
+  --phantom-card: #EAEAEA;
+  --phantom-raised: #E0E0E0;
+  --phantom-text: #111111;
+  --phantom-muted: #666666;
+  --phantom-faint: #999999;
+  --phantom-accent: #E03A25;
+  --phantom-dark-red: #C52A19;
+  --border-subtle: rgba(0,0,0,0.1);
+  --border-red: rgba(240,74,53,0.28);
+}
+
+.dark {
+  --phantom-bg: #0E0E0E;
+  --phantom-section: #111111;
+  --phantom-card: #151515;
+  --phantom-raised: #1B1B1B;
+  --phantom-text: #F4F1EB;
+  --phantom-muted: #AFAAA2;
+  --phantom-faint: #69645E;
+  --phantom-accent: #FF4B35;
+  --phantom-dark-red: #7A1D16;
+  --border-subtle: rgba(255,255,255,0.08);
+  --border-red: rgba(255,75,53,0.28);
+}
+
+@theme {
+  --color-phantom-red: var(--phantom-red);
+  --color-phantom-bg: var(--phantom-bg);
+  --color-phantom-section: var(--phantom-section);
+  --color-phantom-card: var(--phantom-card);
+  --color-phantom-raised: var(--phantom-raised);
+  --color-phantom-text: var(--phantom-text);
+  --color-phantom-muted: var(--phantom-muted);
+  --color-phantom-faint: var(--phantom-faint);
+  --color-phantom-accent: var(--phantom-accent);
+  --color-phantom-dark-red: var(--phantom-dark-red);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-red: var(--border-red);
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+.bg-grid-white {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-grid-red {
+  background-image: linear-gradient(to right, var(--border-red) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-red) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-vortex {
+  background: 
+    radial-gradient(ellipse at bottom, rgba(240, 74, 53, 0.2) 0%, transparent 60%),
+    linear-gradient(to bottom, transparent, rgba(240, 74, 53, 0.1));
+}
+
+.perspective-grid {
+  transform: perspective(600px) rotateX(60deg);
+  transform-origin: bottom;
+}
+
+html {
+  scroll-behavior: smooth;
+}
