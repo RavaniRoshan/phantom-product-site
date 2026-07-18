@@ -211,11 +211,9 @@ export function Features() {
               <video
                 className="w-full h-full object-cover"
                 src="/phantom-demo.mp4"
-                autoPlay
-                muted
-                loop
                 playsInline
                 controls
+                preload="metadata"
               />
             </div>
           </div>
