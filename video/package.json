@@ -1,0 +1,20 @@
+{
+  "name": "phantom-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remotion showcase video for the Phantom product site",
+  "scripts": {
+    "render": "remotion render PhantomDemo out/phantom-demo.mp4",
+    "studio": "remotion studio"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.290",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.290"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}
