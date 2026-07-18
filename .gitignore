@@ -6,3 +6,10 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# lockfile (bun.lock is canonical for this repo)
+package-lock.json
+
+# Remotion render output (source lives in video/, mp4 is published to public/)
+video/out/
+video/dist/

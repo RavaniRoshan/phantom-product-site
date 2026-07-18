@@ -199,6 +199,28 @@ export function Features() {
            
            <div className="absolute inset-0 bg-gradient-to-t from-phantom-section via-transparent to-phantom-section pointer-events-none" />
         </div>
+
+        {/* Use-case demo video */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <div className="text-center mb-8">
+            <div className="text-phantom-accent font-mono text-sm mb-3 tracking-wider uppercase">See it run</div>
+            <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Install. Launch. Watch it work.</h3>
+          </div>
+          <div className="relative rounded-xl overflow-hidden border border-border-red bg-black shadow-[0_0_60px_rgba(240,74,53,0.12)]">
+            <div className="aspect-video">
+              <video
+                className="w-full h-full object-cover"
+                src="/phantom-demo.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              />
+            </div>
+          </div>
+          <p className="text-center text-sm text-phantom-faint mt-4 font-mono">Offline demo · mock provider · on-brand 16:9 showcase</p>
+        </div>
       </div>
 
     </div>

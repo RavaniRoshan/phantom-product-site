@@ -105,6 +105,32 @@ export function TerminalShowcase() {
           </div>
         </div>
 
+        {/* Use-case demo video */}
+        <section id="demo" className="mb-40">
+          <div className="text-center mb-12">
+            <div className="text-phantom-accent font-mono text-sm mb-4 tracking-wider uppercase">See it run</div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Install. Launch. Watch it work.</h2>
+          </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="relative rounded-xl overflow-hidden border border-border-red bg-black shadow-[0_0_60px_rgba(240,74,53,0.12)]">
+              <div className="aspect-video">
+                <video
+                  className="w-full h-full object-cover"
+                  src="/phantom-demo.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                />
+              </div>
+            </div>
+            <p className="text-center text-sm text-phantom-faint mt-4 font-mono">
+              Offline demo · mock provider · on-brand 16:9 showcase
+            </p>
+          </div>
+        </section>
+
         {/* Ready to Clone */}
         <div className="mb-40 text-center max-w-2xl mx-auto">
           <h2 className="text-4xl font-bold tracking-tight mb-6">Phantom is ready to clone.</h2>
