@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
 import { Monitor, Chrome, TerminalSquare, Layers, Settings2, WifiOff } from 'lucide-react';
+import { SpotlightCard } from './ui/SpotlightCard';
+import { CountUp } from './ui/CountUp';
 
 const capabilities = [
   {
@@ -156,25 +158,26 @@ export function Architecture() {
           
           <div className="grid md:grid-cols-3 gap-4 md:auto-rows-[minmax(260px,auto)]">
             {capabilities.map((cap, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`border border-border-subtle p-6 rounded-xl hover:-translate-y-1 transition-transform group flex flex-col h-full ${cap.className}`}
-              >
-                <div className="flex-grow">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 bg-phantom-card dark:bg-black/50 border border-border-subtle dark:border-white/10 rounded-lg group-hover:border-phantom-red/50 transition-colors shadow-sm dark:shadow-[0_0_15px_rgba(0,0,0,0)] group-hover:shadow-[0_0_15px_rgba(240,74,53,0.15)]">
-                      {cap.icon}
+              <SpotlightCard key={i}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`border border-border-subtle p-6 rounded-xl hover:-translate-y-1 transition-transform group flex flex-col h-full ${cap.className}`}
+                >
+                  <div className="flex-grow">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="p-3 bg-phantom-card dark:bg-black/50 border border-border-subtle dark:border-white/10 rounded-lg group-hover:border-phantom-red/50 transition-colors shadow-sm dark:shadow-[0_0_15px_rgba(0,0,0,0)] group-hover:shadow-[0_0_15px_rgba(240,74,53,0.15)]">
+                        {cap.icon}
+                      </div>
+                      <span className="font-mono text-sm text-phantom-muted dark:text-white/40">[{cap.num}]</span>
                     </div>
-                    <span className="font-mono text-sm text-phantom-muted dark:text-white/40">[{cap.num}]</span>
+                    <h3 className={`font-semibold text-phantom-text dark:text-white mb-2 ${i === 0 ? 'text-3xl' : 'text-xl'}`}>{cap.title}</h3>
                   </div>
-                  <h3 className={`font-semibold text-phantom-text dark:text-white mb-2 ${i === 0 ? 'text-3xl' : 'text-xl'}`}>{cap.title}</h3>
-                </div>
-                <p className={`text-phantom-muted dark:text-white/70 leading-relaxed mt-2 ${i === 0 ? 'text-lg max-w-sm' : 'text-sm'}`}>{cap.body}</p>
-              </motion.div>
+                  <p className={`text-phantom-muted dark:text-white/70 leading-relaxed mt-2 ${i === 0 ? 'text-lg max-w-sm' : 'text-sm'}`}>{cap.body}</p>
+                </motion.div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -187,12 +190,12 @@ export function Architecture() {
             <div className="text-xs text-phantom-muted">UIA-first background input</div>
           </div>
           <div className="p-8 text-center">
-            <div className="text-4xl md:text-5xl font-mono font-bold text-phantom-text mb-2">100%</div>
+            <div className="text-4xl md:text-5xl font-mono font-bold text-phantom-text mb-2"><CountUp to={100} suffix="%" /></div>
             <div className="text-sm font-medium text-phantom-text mb-1">user-controlled modes</div>
             <div className="text-xs text-phantom-muted">Safe / Hero modes</div>
           </div>
           <div className="p-8 text-center">
-            <div className="text-4xl md:text-5xl font-mono font-bold text-phantom-text mb-2">6</div>
+            <div className="text-4xl md:text-5xl font-mono font-bold text-phantom-text mb-2"><CountUp to={6} /></div>
             <div className="text-sm font-medium text-phantom-text mb-1">provider adapters</div>
             <div className="text-xs text-phantom-muted">Claude to Mock</div>
           </div>

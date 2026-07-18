@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Phantom — Product Site",
+  "description": "Landing page for Phantom, an open-source, Windows-first background computer-use agent. No focus theft. Bring your own LLM. Runs fully offline.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
